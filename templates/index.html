@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Income Tax Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>UK Income Tax & Rent Calculator</h1>
+
+        <form method="POST">
+            <label for="salary">Enter yearly gross salary (£):</label>
+            <input type="text" id="salary" name="salary" placeholder="Enter Salary" required>
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if salary is not none %}
+        <div class="result">
+            <h2>Results for £{{ salary | comma }}</h2>
+            <p><strong>Yearly Tax Paid</strong> £{{ tax | comma }}</p>
+            <p><strong>National Insurance</strong> £{{ ni | comma }}</p>
+            <p><strong>Yearly Net Income</strong> £{{ net_income | comma }}</p>
+            <p><strong>Monthly Net Income</strong> £{{ net_income_monthly | comma }}</p>
+
+            <h3>Suggested Rent Based on Monthly Net Income</h3>
+            <ul>
+                {% for percentage, budget in rent_budgets.items() %}
+                    <li>{{ percentage }}: £{{ budget | comma }} pcm</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

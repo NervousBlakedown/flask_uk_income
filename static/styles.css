@@ -1,0 +1,199 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Frutiger', Arial, sans-serif; /* Frutiger Aero-inspired font */
+}
+
+/* Body */
+body {
+    background-color: #ffffff; /* White background for a clean, modern look */
+    color: #333333; /* Dark gray text for readability */
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    line-height: 1.6;
+    background-image: url('https://example.com/path/to/texture.png'); /* Optional subtle background texture */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Frutiger', Arial, sans-serif; /* Frutiger font for modern aesthetic */
+    color: #003366; /* Navy blue for headings */
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Uppercase for a professional, sleek look */
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 48px;
+    color: #003366; /* Sleek navy blue */
+}
+
+h2 {
+    font-size: 32px;
+    margin-top: 20px;
+    color: #666666; /* Muted gray for secondary headings */
+}
+
+h3 {
+    font-size: 28px;
+    color: #0099cc; /* Light blue for emphasis */
+    margin-top: 10px;
+}
+
+/* Links */
+a {
+    color: #003366; /* Navy blue for links */
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+a:hover {
+    color: #0099cc; /* Light blue on hover */
+}
+
+a:before {
+    content: '→';
+    position: absolute;
+    right: -25px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+a:hover:before {
+    opacity: 1;
+    right: 0;
+}
+
+/* Form Elements */
+input[type="text"], button {
+    font-family: 'Frutiger', Arial, sans-serif; /* Modern font for form elements */
+    padding: 12px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid #003366; /* Navy blue border */
+    background-color: #f9f9f9; /* Light background for inputs */
+    color: #333333; /* Dark text */
+}
+
+input[type="text"]:focus, button:focus {
+    border-color: #0099cc; /* Light blue on focus */
+    outline: none;
+}
+
+button {
+    font-size: 20px;
+    background-color: #003366; /* Navy blue background */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    width: 220px;
+    padding: 12px 30px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #002a55; /* Darker navy on hover */
+    transform: translateY(-3px); /* Slight hover effect */
+}
+
+button:active {
+    background-color: #001d3d; /* Darkest navy when clicked */
+    transform: translateY(0); /* Clicking effect */
+}
+
+/* Content Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent light background */
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Results Section */
+.result {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light gray for results */
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Rent Suggestions (Improved Layout) */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+ul li {
+    background-color: #f4f4f4; /* Light gray background for items */
+    color: #003366; /* Navy blue text */
+    padding: 15px;
+    width: 200px;
+    font-size: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+ul li:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #999999; /* Light gray text for footer */
+}
+
+footer a {
+    color: #999999;
+}
+
+footer a:hover {
+    color: #003366; /* Navy blue hover effect */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    input[type="text"], button {
+        width: 100%;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul li {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
